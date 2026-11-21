@@ -1,0 +1,6 @@
+**/.cache/
+**/tmp/
+**/dist/
+**/generated/
+
+__pycache__/
