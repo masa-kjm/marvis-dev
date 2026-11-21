@@ -57,26 +57,19 @@ During execution:
 
 - Update Work Unit progress and Completion Criteria based on evidence.
 - Record discoveries that materially affect the plan.
-- Revise affected Work Units when requirements, assumptions, or implementation constraints change.
-- Preserve the original intent and requirements unless explicitly changed.
+- Treat external edits to the plan as potentially intentional.
+- Preserve the existing structure, original intent, and user-defined requirements unless a revision is necessary or the user explicitly changes them.
+- When findings invalidate the plan or requirements, assumptions, or implementation constraints change, revise the affected sections and Work Units.
 - Revalidate the plan after material revisions.
 
 Do not mark criteria complete without verification.
 
-do not remove unmet requirements merely to make the plan appear complete.
+Do not remove unmet requirements merely to make the plan appear complete.
 
-## Plan Updates
+## Completion
 
-- When updating progress, preserve the existing plan structure and requirements unless a revision is necessary.
-- When new findings invalidate the plan, revise the affected sections and revalidate the plan.
-- Preserve user-defined requirements unless explicitly changed by the user.
-- Do not mark completion criteria as satisfied without evidence.
-- Treat external edits to the plan as potentially intentional.
+Before declaring the task complete:
 
-## completion
-
-before declaring the task complete:
-
-- verify the final deliverables against the original request and applicable specifications.
-- check all task-level completion criteria, not only individual work unit criteria.
-- record any unmet criteria or remaining limitations.
+- Verify the final deliverables against the original request and applicable specifications.
+- Check all task-level Completion Criteria, not only individual Work Unit criteria.
+- Record any unmet criteria or remaining limitations.
