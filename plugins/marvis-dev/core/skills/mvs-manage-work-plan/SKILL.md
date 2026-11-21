@@ -51,6 +51,28 @@ Before finalizing or substantially revising the plan:
 
 Do not silently invent requirements or resolve material ambiguities without evidence.
 
+## Plan Maintenance
+
+During execution:
+
+- Update Work Unit progress and Completion Criteria based on evidence.
+- Record discoveries that materially affect the plan.
+- Revise affected Work Units when requirements, assumptions, or implementation constraints change.
+- Preserve the original intent and requirements unless explicitly changed.
+- Revalidate the plan after material revisions.
+
+Do not mark criteria complete without verification.
+
+do not remove unmet requirements merely to make the plan appear complete.
+
+## Plan Updates
+
+- When updating progress, preserve the existing plan structure and requirements unless a revision is necessary.
+- When new findings invalidate the plan, revise the affected sections and revalidate the plan.
+- Preserve user-defined requirements unless explicitly changed by the user.
+- Do not mark completion criteria as satisfied without evidence.
+- Treat external edits to the plan as potentially intentional.
+
 ## completion
 
 before declaring the task complete:
