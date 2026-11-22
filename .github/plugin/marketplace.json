@@ -1,0 +1,13 @@
+{
+  "name": "marvis-dev",
+  "owner": {
+    "name": "masa-kjm"
+  },
+  "plugins": [
+    {
+      "name": "marvis-dev",
+      "source": "./plugins/marvis-dev",
+      "description": "Reusable development planning, codebase mapping, implementation, and review skills."
+    }
+  ]
+}

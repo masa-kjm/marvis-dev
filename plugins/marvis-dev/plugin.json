@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "marvis-dev",
+  "version": "0.1.0",
+  "description": "Reusable development planning, codebase mapping, implementation, and review skills.",
+  "author": {
+    "name": "masa-kjm"
+  }
+}

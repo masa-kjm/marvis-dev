@@ -1,0 +1,13 @@
+{
+  "name": "marvis-dev",
+  "version": "0.1.0",
+  "description": "Reusable development planning, codebase mapping, implementation, and review skills.",
+  "author": {
+    "name": "masa-kjm"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MARVIS Dev",
+    "shortDescription": "Plan, implement, and review development work"
+  }
+}
