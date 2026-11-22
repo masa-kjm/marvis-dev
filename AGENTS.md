@@ -10,3 +10,4 @@ This repository contains reusable components for development harnesses. It curre
 ## Documentation Style
 
 - Do not insert line breaks within paragraphs solely to align text.
+- Use "ASD-STE100 Simplified Technical English" for any documents or comments to be committed.
