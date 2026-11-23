@@ -18,6 +18,7 @@ See [AGENTS.md](../AGENTS.md) for the repository rules.
 
 | Skill | Purpose |
 | --- | --- |
+| [`mvs-map-codebase`](../plugins/marvis-dev/skills/mvs-map-codebase/SKILL.md) | Maintain a codebase map in `.marvis/codebase/`. |
 | [`mvs-manage-work-plan`](../plugins/marvis-dev/skills/mvs-manage-work-plan/SKILL.md) | Create and update a work plan with goals, limits, tasks, and completion criteria. |
 | [`mvs-review-change`](../plugins/marvis-dev/skills/mvs-review-change/SKILL.md) | Review changes against requirements and test results. |
 | [`mvs-execute-work-unit`](../plugins/marvis-dev/skills/mvs-execute-work-unit/SKILL.md) | Implement and verify one Work Unit. |
