@@ -5,7 +5,7 @@ description: Implement and verify one Work Unit from a work plan, then report th
 
 # mvs-execute-work-unit
 
-Execute one Work Unit  by orchestrating implementation and reviews against its goal, constraints, deliverables, and completion criteria.
+Execute one Work Unit by coordinating implementation, verification, and review against its goal, constraints, deliverables, and completion criteria.
 
 ## Work Execution
 
@@ -16,10 +16,11 @@ Execute one Work Unit  by orchestrating implementation and reviews against its g
 
 ## Review
 
-- Use a separate sub-agent for independent review when warranted.
-- Provide the reviewer with the original requirements, relevant specifications, implementation diff, and verification results.
-- Evaluate whether the implementation satisfies the requirements and architectural constraints.
-- Address significant findings and repeat verification as necessary.
+- Check the change against the Work Unit completion criteria after implementation and verification.
+- Use a separate sub-agent with `mvs-review-change` when independent review gives a concrete benefit, such as a fresh assessment of substantial changes, a distinct risk area, or a focused review of complex behavior. Keep small changes with this executor when delegation adds little value.
+- Give the reviewer the Work Unit goal and completion criteria, original requirements, relevant specifications and architectural constraints, change scope or diff, verification results, and any requested review perspectives. Give references to source material so the reviewer can inspect more context. Do not transfer the full implementation history unless it is needed to explain a decision.
+- Use more than one reviewer only when distinct perspectives each justify a separate review. Ask reviewers to report findings with evidence and remaining risks.
+- Evaluate the findings against the requirements and constraints. Resolve significant findings, repeat relevant verification, and request another review when a material change needs independent assessment. This executor decides whether the Work Unit is complete.
 
 ## Coordination
 
