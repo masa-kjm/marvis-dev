@@ -1,15 +1,14 @@
 ---
-name: mvs-workflow
-description: Carry out implementation and reviews based on the plan.
+name: mvs-execute-work-unit
+description: Implement and verify one Work Unit from a work plan, then report the result to the task executor.
 ---
 
-# mvs-workflow
+# mvs-execute-work-unit
 
-Execute the plan by orchestrating implementation and reviews.
+Execute one Work Unit  by orchestrating implementation and reviews against its goal, constraints, deliverables, and completion criteria.
 
 ## Work Execution
 
-- Delegate a Work Unit when its scope is clear and a sub-agent provides a concrete benefit: safe parallel execution, independent investigation, or focused context for substantial work.
 - Keep small or tightly coupled work with the orchestrator when delegation overhead outweighs the benefit.
 - Provide each executor with the relevant task definition, constraints, context references, and completion criteria.
 - Allow executors to investigate additional context as needed.
@@ -24,8 +23,11 @@ Execute the plan by orchestrating implementation and reviews.
 
 ## Coordination
 
-- Execute independent Work Units concurrently only when dependencies and writable scopes do not conflict, and integration and verification responsibilities are clear.
-- Keep Work Plan updates under orchestrator control.
+- Keep Work Plan (check-list) updates under this skill.
 - Avoid unnecessary transfer of execution history between sub-agents.
 - When a material decision requires user input, explain the decision and its impact. Present a recommended option with its rationale, considering long-term maintainability, compatibility, cost, and reversibility, alongside viable alternatives and their trade-offs.
 - Continue work that does not depend on the decision. Do not create a new approval gate for routine implementation choices.
+
+## Handoff
+
+Report the changed files, verification evidence, review findings, unmet criteria, and any discovery that affects other Work Units or the task plan.

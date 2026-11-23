@@ -19,9 +19,9 @@ See [AGENTS.md](../AGENTS.md) for the repository rules.
 | Skill | Purpose |
 | --- | --- |
 | [`mvs-manage-work-plan`](../plugins/marvis-dev/skills/mvs-manage-work-plan/SKILL.md) | Create and update a work plan with goals, limits, tasks, and completion criteria. |
-| [`mvs-workflow`](../plugins/marvis-dev/skills/mvs-workflow/SKILL.md) | When and to whom to make a request, and what to do next based on the outcome. |
+| [`mvs-execute-work-unit`](../plugins/marvis-dev/skills/mvs-execute-work-unit/SKILL.md) | Implement and verify one Work Unit. |
 
-## Architecture & Workflow
+## Workflow
 
 This diagram shows how agents can use the skills and their output. The arrows show information flow. They do not start a skill automatically.
 
@@ -43,11 +43,13 @@ flowchart TD
 
 Execution Phase:
 
+Execute by unit
+
 ```mermaid
 flowchart TD
   subgraph Execution["Execution Phase"]
     Caller(["Human"])
-    WorkflowSkill["mvs-workflow"]
+    ExecuteWU["mvs-execute-work-unit"]
     Implement["Implement change"]
     Verify["Verify result"]
     ReviewChoice{"Independent review useful?"}
@@ -56,14 +58,14 @@ flowchart TD
     Update["Update Work Plan"]
   end
 
-  Caller -->|"Work Plan (by unit)"| WorkflowSkill
-  WorkflowSkill -->|Changed Codebase| Caller
-  WorkflowSkill --> Implement
-  WorkflowSkill --> Verify --> ReviewChoice
-  Implement --> WorkflowSkill
+  Caller -->|"Work Plan (by unit)"| ExecuteWU
+  ExecuteWU -->|Changed Codebase| Caller
+  ExecuteWU --> Implement
+  ExecuteWU --> Verify --> ReviewChoice
+  Implement --> ExecuteWU
   ReviewChoice -->|Yes| Reviewer -->|Findings / risks| Decision
   ReviewChoice -->|No| Decision
 
-  Decision -->|No: fix required| WorkflowSkill
+  Decision -->|No: fix required| ExecuteWU
   Decision -->|Yes| Update
 ```
