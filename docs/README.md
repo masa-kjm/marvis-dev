@@ -19,6 +19,7 @@ See [AGENTS.md](../AGENTS.md) for the repository rules.
 | Skill | Purpose |
 | --- | --- |
 | [`mvs-map-codebase`](../plugins/marvis-dev/skills/mvs-map-codebase/SKILL.md) | Maintain a codebase map in `.marvis/codebase/`. |
+| [`mvs-define-spec`](../plugins/marvis-dev/skills/mvs-define-spec/SKILL.md) | Define or revise a specification when requested. |
 | [`mvs-manage-work-plan`](../plugins/marvis-dev/skills/mvs-manage-work-plan/SKILL.md) | Create and update a work plan with goals, limits, tasks, and completion criteria. |
 | [`mvs-review-change`](../plugins/marvis-dev/skills/mvs-review-change/SKILL.md) | Review changes against requirements and test results. |
 | [`mvs-execute-work-unit`](../plugins/marvis-dev/skills/mvs-execute-work-unit/SKILL.md) | Implement and verify one Work Unit. |
@@ -46,6 +47,27 @@ flowchart TD
   Map -->|Navigation pointers| Consumers
 ```
 
+Specification Definition Phase:
+
+```mermaid
+flowchart TD
+  subgraph Definition["Specification Definition Phase"]
+    Caller["Caller"]
+    Sources[("Repository sources")]
+    SpecSkill["mvs-define-spec"]
+    Ready{"Ready for planning?"}
+  end
+  Planning(["Planning Phase"])
+
+  Caller -->|Specification request| SpecSkill
+  Sources -->|Relevant facts| SpecSkill
+  SpecSkill -->|Draft and open decisions| Caller
+  Caller -->|Decisions or corrections| SpecSkill
+  SpecSkill -->|Validated specification| Ready
+  Ready -->|No: decisions needed| Caller
+  Ready -->|Yes: specification| Planning
+```
+
 Planning Phase:
 
 ```mermaid
@@ -56,7 +78,7 @@ flowchart TD
   end
   Execution(["Execution Phase"])
 
-  Caller -->|Spec| PlanSkill
+  Caller -->|Specification| PlanSkill
   PlanSkill -->|Work Plan| Caller
   Planning -->|Work Plan| Execution
   Execution -->|Plan revision required| Planning
