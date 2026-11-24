@@ -25,14 +25,33 @@ See [AGENTS.md](../AGENTS.md) for the repository rules.
 
 ## Workflow
 
-This diagram shows how agents can use the skills and their output. The arrows show information flow. They do not start a skill automatically.
+These diagrams show how agents can use the skills and their output. Subgraphs mark phases. Rounded nodes refer to other phases. Cylinders show stored repository content. Diamonds show decisions. Rectangles show callers, skills, and actions. Arrows show information transfer or the next action, as stated by their labels. An arrow does not start a skill automatically.
+
+Map Codebase Phase:
+
+```mermaid
+flowchart TD
+  subgraph Mapping["Map Codebase Phase"]
+    Caller["Caller"]
+    Sources[("Repository sources")]
+    MapSkill["mvs-map-codebase"]
+    Map[(".marvis/codebase/")]
+  end
+  Consumers(["Other Phases"])
+
+  Caller -->|Map request| MapSkill
+  Sources -->|Repository facts| MapSkill
+  Map -->|Existing map| MapSkill
+  MapSkill -->|Create or update| Map
+  Map -->|Navigation pointers| Consumers
+```
 
 Planning Phase:
 
 ```mermaid
 flowchart TD
   subgraph Planning["Planning Phase"]
-    Caller(["Human"])
+    Caller["Caller"]
     PlanSkill["mvs-manage-work-plan"]
   end
   Execution(["Execution Phase"])
@@ -50,7 +69,7 @@ Execute by unit
 ```mermaid
 flowchart TD
   subgraph Execution["Execution Phase"]
-    Caller(["Human"])
+    Caller["Caller"]
     ExecuteWU["mvs-execute-work-unit"]
     Implement["Implement change"]
     Verify["Verify result"]
@@ -58,16 +77,20 @@ flowchart TD
     Reviewer["mvs-review-change"]
     Decision{"Completion Criteria<br/>Satisfied?"}
     Update["Update Work Plan"]
+    Report["Report results"]
   end
 
   Caller -->|"Work Plan (by unit)"| ExecuteWU
-  ExecuteWU -->|Changed Codebase| Caller
-  ExecuteWU --> Implement
-  ExecuteWU --> Verify --> ReviewChoice
-  Implement --> ExecuteWU
-  ReviewChoice -->|Yes| Reviewer -->|Findings / risks| Decision
-  ReviewChoice -->|No| Decision
+  ExecuteWU -->|Implementation task| Implement
+  Implement -->|Changed code| ExecuteWU
+  ExecuteWU -->|Verification task| Verify
+  Verify -->|Verification results| ReviewChoice
+  ReviewChoice -->|Yes: review| Reviewer
+  Reviewer -->|Findings and risks| Decision
+  ReviewChoice -->|No: evaluate| Decision
 
   Decision -->|No: fix required| ExecuteWU
-  Decision -->|Yes| Update
+  Decision -->|Yes: record progress| Update
+  Update -->|Updated plan| Report
+  Report -->|Work Unit results| Caller
 ```
