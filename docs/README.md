@@ -12,6 +12,8 @@ This repository contains reusable parts for development tools. At present, it co
 
 See [AGENTS.md](../AGENTS.md) for the repository rules.
 
+The other `mvs-*` skills use `.marvis/codebase/README.md` as an entry point when they need repository context. They open relevant topics as needed and check important findings against primary sources. If the map is unavailable, they inspect primary sources directly. They report concrete map problems in their handoffs without changing the map.
+
 ## Components
 
 ### Skills

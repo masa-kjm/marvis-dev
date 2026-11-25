@@ -7,6 +7,12 @@ description: Create, validate, and maintain executable work plans for medium-to-
 
 Create and maintain a work plan that guides execution and verification.
 
+## Codebase Map
+
+When repository context is needed, read `.marvis/codebase/README.md` if it exists. Open relevant topics only as needed. Use the map to find sources, and verify important findings against source code, tests, configuration, or repository documentation. If the map is absent or unusable, investigate those sources directly. An absent map alone does not need a report.
+
+Do not update the map as part of this skill. If the map is unusable or an entry fails to locate relevant sources, conflicts with a primary source, links to a missing target, or gives an incorrect responsibility boundary, use verified sources for the task. Report the map path, evidence, and task impact in the final handoff. Surface an unresolved conflict when it affects a current decision.
+
 ## Task Definition
 
 Define the following for the overall task:
@@ -17,7 +23,7 @@ Define the following for the overall task:
 - **Deliverables**: Expected outputs.
 - **Completion Criteria**: Concrete, verifiable conditions represented as an updateable checklist.
 
-Use codebase maps, specifications, repository exploration, and other available sources to identify relevant context.
+Use specifications, repository exploration, and other available sources to identify relevant context.
 
 Keep context concise. Include essential findings and pointers to authoritative sources rather than duplicating extensive documentation.
 

@@ -7,6 +7,12 @@ description: Review implementation changes against requirements, specifications,
 
 Review a change against its requirements and constraints. Use a fresh assessment when this skill is assigned to a separate reviewer.
 
+## Codebase Map
+
+When repository context is needed, read `.marvis/codebase/README.md` if it exists. Open relevant topics only as needed. Use the map to find sources, and verify important findings against source code, tests, configuration, or repository documentation. If the map is absent or unusable, investigate those sources directly. An absent map alone does not need a report.
+
+Do not update the map as part of this skill. If the map is unusable or an entry fails to locate relevant sources, conflicts with a primary source, links to a missing target, or gives an incorrect responsibility boundary, use verified sources for the task. Report the map path, evidence, and task impact in the final handoff. Surface an unresolved conflict when it affects a current decision.
+
 ## Review Context
 
 Understand:

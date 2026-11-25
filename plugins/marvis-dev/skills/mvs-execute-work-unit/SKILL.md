@@ -7,6 +7,12 @@ description: Implement and verify one Work Unit from a work plan, then report th
 
 Execute one Work Unit by coordinating implementation, verification, and review against its goal, constraints, deliverables, and completion criteria.
 
+## Codebase Map
+
+When repository context is needed, read `.marvis/codebase/README.md` if it exists. Open relevant topics only as needed. Use the map to find sources, and verify important findings against source code, tests, configuration, or repository documentation. If the map is absent or unusable, investigate those sources directly. An absent map alone does not need a report.
+
+Do not update the map as part of this skill. If the map is unusable or an entry fails to locate relevant sources, conflicts with a primary source, links to a missing target, or gives an incorrect responsibility boundary, use verified sources for the task. Report the map path, evidence, and task impact in the final handoff. Surface an unresolved conflict when it affects a current decision.
+
 ## Work Execution
 
 - Keep small or tightly coupled work with the orchestrator when delegation overhead outweighs the benefit.

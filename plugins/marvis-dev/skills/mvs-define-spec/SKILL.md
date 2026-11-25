@@ -9,11 +9,16 @@ Help the user clarify their intent, evaluate requirements and design decisions, 
 
 Use this skill when specification or requirements analysis is a distinct requested task. Handle routine clarification within ordinary development work without starting a separate specification phase.
 
+## Codebase Map
+
+When repository context is needed, read `.marvis/codebase/README.md` if it exists. Open relevant topics only as needed. Use the map to find sources, and verify important findings against source code, tests, configuration, or repository documentation. If the map is absent or unusable, investigate those sources directly. An absent map alone does not need a report.
+
+Do not update the map as part of this skill. If the map is unusable or an entry fails to locate relevant sources, conflicts with a primary source, links to a missing target, or gives an incorrect responsibility boundary, use verified sources for the task. Report the map path, evidence, and task impact in the final handoff. Surface an unresolved conflict when it affects a current decision.
+
 ## Requirement Exploration
 
 - Understand the user's intent, background, desired outcomes, and existing requirements.
 - Investigate relevant repository context when it affects the requirements or design decisions.
-- Use Codebase Maps as discovery aids and verify important findings against primary sources.
 - Identify material ambiguities, missing requirements, conflicting constraints, and significant risks.
 - Consider relevant alternatives and explain their trade-offs when a decision is needed.
 - Adapt the investigation and discussion to the nature and complexity of the task. Avoid unnecessary questions and rigid procedures.
