@@ -51,8 +51,10 @@ Before finalizing or substantially revising the plan:
 - Review the original request and applicable specifications.
 - Verify that the plan covers all known requirements.
 - Verify that the Work Units collectively support the overall Goal and Completion Criteria.
+- Check Work Unit dependencies, the verifiability of Completion Criteria, and verification of the integrated result.
 - Check consistency with known architectural boundaries and constraints.
 - Identify unresolved assumptions, missing context, and significant risks.
+- For plans with substantial scope, complex dependencies, or significant uncertainty, request an independent review with fresh context. Give the reviewer the original request, specifications, plan, and pointers to relevant repository sources. Ask the reviewer to check requirement coverage, repository assumptions, dependencies, Completion Criteria, and integration verification. The reviewer must not edit the plan; ask for evidence-based findings that distinguish confirmed defects, unverified assumptions, and execution blockers, plus remaining risks.
 - Revise the plan when validation reveals deficiencies.
 
 Do not silently invent requirements or resolve material ambiguities without evidence.
