@@ -15,7 +15,8 @@ Do not update the map as part of this skill. If the map is unusable or an entry 
 
 ## Work Execution
 
-- Keep small or tightly coupled work with the orchestrator when delegation overhead outweighs the benefit.
+- Decide separately whether to delegate implementation and review before starting work.
+- Keep small or tightly coupled implementation with this executor when delegation overhead outweighs the benefit.
 - Provide each executor with the relevant task definition, constraints, context references, and completion criteria.
 - Allow executors to investigate additional context as needed.
 - Collect implementation results, verification evidence, and unresolved issues.
@@ -23,7 +24,8 @@ Do not update the map as part of this skill. If the map is unusable or an entry 
 ## Review
 
 - Check the change against the Work Unit completion criteria after implementation and verification.
-- Use a separate sub-agent with `mvs-review-change` when independent review gives a concrete benefit, such as a fresh assessment of substantial changes, a distinct risk area, or a focused review of complex behavior. Keep small changes with this executor when delegation adds little value.
+- Use a separate sub-agent with `mvs-review-change` when independent review gives a concrete benefit, such as checking substantial changes, complex behavior, document consistency, multiple criteria, or effects on later Work Units.
+- If review stays with this executor, apply `mvs-review-change` after verification.
 - Give the reviewer the Work Unit goal and completion criteria, original requirements, relevant specifications and architectural constraints, change scope or diff, verification results, and any requested review perspectives. Give references to source material so the reviewer can inspect more context. Do not transfer the full implementation history unless it is needed to explain a decision.
 - Use more than one reviewer only when distinct perspectives each justify a separate review. Ask reviewers to report findings with evidence and remaining risks.
 - Evaluate the findings against the requirements and constraints. Resolve significant findings, repeat relevant verification, and request another review when a material change needs independent assessment. This executor decides whether the Work Unit is complete.
@@ -37,4 +39,4 @@ Do not update the map as part of this skill. If the map is unusable or an entry 
 
 ## Handoff
 
-Report the changed files, verification evidence, review findings, unmet criteria, and any discovery that affects other Work Units or the task plan.
+Report the changed files, verification evidence, review findings, unmet criteria, and any discovery that affects other Work Units or the task plan. Give one sentence of reasoning for each decision not to delegate implementation or review.

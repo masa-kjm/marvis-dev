@@ -30,7 +30,7 @@ The other `mvs-*` skills use `.marvis/codebase/README.md` as an entry point when
 
 These diagrams show how agents can use the skills and their output. Subgraphs mark phases. Rounded nodes refer to other phases. Cylinders show stored repository content. Diamonds show decisions. Rectangles show callers, skills, and actions. Arrows show information transfer or the next action, as stated by their labels. An arrow does not start a skill automatically.
 
-Map Codebase Phase:
+### Map Codebase Phase
 
 ```mermaid
 flowchart TD
@@ -49,7 +49,7 @@ flowchart TD
   Map -->|Navigation pointers| Consumers
 ```
 
-Specification Definition Phase:
+### Specification Definition Phase
 
 ```mermaid
 flowchart TD
@@ -70,7 +70,7 @@ flowchart TD
   Ready -->|Yes: specification| Planning
 ```
 
-Planning Phase:
+### Planning Phase
 
 ```mermaid
 flowchart TD
@@ -86,7 +86,7 @@ flowchart TD
   Execution -->|Plan revision required| Planning
 ```
 
-Execution Phase:
+### Execution Phase
 
 Execute by unit
 
@@ -97,8 +97,7 @@ flowchart TD
     ExecuteWU["mvs-execute-work-unit"]
     Implement["Implement change"]
     Verify["Verify result"]
-    ReviewChoice{"Independent review useful?"}
-    Reviewer["mvs-review-change"]
+    Review["mvs-review-change"]
     Decision{"Completion Criteria<br/>Satisfied?"}
     Update["Update Work Plan"]
     Report["Report results"]
@@ -108,13 +107,13 @@ flowchart TD
   ExecuteWU -->|Implementation task| Implement
   Implement -->|Changed code| ExecuteWU
   ExecuteWU -->|Verification task| Verify
-  Verify -->|Verification results| ReviewChoice
-  ReviewChoice -->|Yes: review| Reviewer
-  Reviewer -->|Findings and risks| Decision
-  ReviewChoice -->|No: evaluate| Decision
+  Verify -->|Change and verification results| Review
+  Review -->|Findings and risks| Decision
 
   Decision -->|No: fix required| ExecuteWU
   Decision -->|Yes: record progress| Update
   Update -->|Updated plan| Report
   Report -->|Work Unit results| Caller
 ```
+
+- The executor may perform or delegate implementation, verification, and review. Review uses `mvs-review-change` in either case.
