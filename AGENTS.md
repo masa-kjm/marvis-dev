@@ -16,4 +16,4 @@ For repository navigation, see the [Codebase Map](../.marvis/codebase/README.md)
 
 ## Development
 
-- When making revisions, also update `docs/README.md` as necessary.
+- When making revisions, also update `plugins/marvis-dev/README.md` as necessary.

@@ -1,16 +1,14 @@
 # marvis-dev
 
-This document shows how the `marvis-dev` plugin is organized. Read the linked skill files and manifests for the full instructions and settings.
+Read the linked skill files for their full instructions.
 
 ## Purpose
 
-This repository contains reusable parts for development tools. At present, it contains one plugin: `marvis-dev`.
+The `marvis-dev` plugin contains reusable skills for development work.
 
 - Keep skill instructions independent of Codex, Claude Code, Cursor, GitHub Copilot, and other agent tools.
 - Keep settings for each tool in separate manifests and marketplace files.
 - Use a layout that can adapt as agent tools change.
-
-See [AGENTS.md](../AGENTS.md) for the repository rules.
 
 The other `mvs-*` skills use `.marvis/codebase/README.md` as an entry point when they need repository context. They open relevant topics as needed and check important findings against primary sources. If the map is unavailable, they inspect primary sources directly. They report concrete map problems in their handoffs without changing the map.
 
@@ -20,11 +18,11 @@ The other `mvs-*` skills use `.marvis/codebase/README.md` as an entry point when
 
 | Skill | Purpose |
 | --- | --- |
-| [`mvs-map-codebase`](../plugins/marvis-dev/skills/mvs-map-codebase/SKILL.md) | Maintain a codebase map in `.marvis/codebase/`. |
-| [`mvs-define-spec`](../plugins/marvis-dev/skills/mvs-define-spec/SKILL.md) | Define or revise a specification when requested. |
-| [`mvs-manage-work-plan`](../plugins/marvis-dev/skills/mvs-manage-work-plan/SKILL.md) | Create and update a work plan with goals, limits, tasks, and completion criteria. |
-| [`mvs-review-change`](../plugins/marvis-dev/skills/mvs-review-change/SKILL.md) | Review changes against requirements and test results. |
-| [`mvs-execute-work-unit`](../plugins/marvis-dev/skills/mvs-execute-work-unit/SKILL.md) | Implement and verify one Work Unit. |
+| [`mvs-map-codebase`](skills/mvs-map-codebase/SKILL.md) | Maintain a codebase map in `.marvis/codebase/`. |
+| [`mvs-define-spec`](skills/mvs-define-spec/SKILL.md) | Define or revise a specification when requested. |
+| [`mvs-manage-work-plan`](skills/mvs-manage-work-plan/SKILL.md) | Create and update a work plan with goals, limits, tasks, and completion criteria. |
+| [`mvs-review-change`](skills/mvs-review-change/SKILL.md) | Review changes against requirements and test results. |
+| [`mvs-execute-work-unit`](skills/mvs-execute-work-unit/SKILL.md) | Implement and verify one Work Unit. |
 
 ## Workflow
 

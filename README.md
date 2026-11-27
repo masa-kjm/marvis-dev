@@ -1,6 +1,6 @@
 # marvis-dev
 
-This repository contains reusable skills for development work. See [docs/README.md](docs/README.md) for the design and file layout.
+This repository contains reusable skills for development work. See the [marvis-dev plugin README](plugins/marvis-dev/README.md) for its design and file layout.
 
 ## Install from Git
 
