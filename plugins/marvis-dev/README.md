@@ -12,6 +12,8 @@ The `marvis-dev` plugin contains reusable skills for development work.
 
 The other `mvs-*` skills use `.marvis/codebase/README.md` as an entry point when they need repository context. They open relevant topics as needed and check important findings against primary sources. If the map is unavailable, they inspect primary sources directly. They report concrete map problems in their handoffs without changing the map.
 
+The map uses short selection conditions to help readers choose the next source. It can point to feature and module entry points, verification procedures, and repository-specific tools when those pointers reduce search.
+
 ## Components
 
 ### Skills

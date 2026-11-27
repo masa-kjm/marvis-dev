@@ -7,7 +7,7 @@ description: Create or update a repository-specific Codebase Map that helps agen
 
 ## Purpose
 
-Maintain a repository-specific Discovery Index that helps agents locate relevant context efficiently and accurately.
+Maintain a repository-specific Discovery Index that helps agents locate relevant context with less search and reading.
 
 The Codebase Map is a navigation aid, not an authoritative replacement for source code, tests, configuration, or documentation.
 
@@ -30,6 +30,10 @@ Consider the following information when relevant:
 - Repository-specific conventions and policies
 - Relevant documentation, tests, configuration, and infrastructure
 - Important implementation entry points
+- Feature or module entry points when names do not lead directly to sources
+- Repository-specific skills, procedures, and scripts
+- Standard verification commands and their required conditions
+- Areas where a broad search is costly or where a narrow search can miss relevant information
 
 These categories are discovery guidance, not a mandatory schema.
 
@@ -43,6 +47,10 @@ Maintain the Codebase Map under `.marvis/codebase/`.
 - `topics/*.md`: Optional detailed context organized by meaningful repository areas.
 
 Keep the entry point concise and navigable. Create additional files only when they improve independent discovery or maintenance.
+
+Use the README as a guide to the next source to read. Add a short selection condition to a link when its purpose is not clear from the label. Group links by task, feature, or module when that helps readers choose a source without opening unrelated files. Create a feature or module index when relevant sources are difficult or costly to find.
+
+Point to the source of a verification command, procedure, script, or skill when possible. Include a short command or condition in the map when it helps readers choose a source or start work. Describe costly or narrow search areas with useful starting points; allow consumers to expand their search when the task requires it.
 
 ## Workflow
 
@@ -63,6 +71,7 @@ Choose investigation methods and scope based on the repository and the requested
 - Avoid duplicating detailed source code or existing documentation.
 - Avoid speculative descriptions.
 - Prefer concise information that supports future context discovery.
+- Favor entries that reduce search or reading effort, including costly one-time discovery, while keeping the map concise and maintainable.
 - Preserve navigability and avoid unnecessary fragmentation.
 - Do not treat existing map content as authoritative without verification.
 
