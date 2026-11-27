@@ -8,17 +8,36 @@ The plugin is in `plugins/marvis-dev/`. Each tool installs the same set of skill
 
 ### Codex
 
-Run `codex plugin marketplace add masa-kjm/marvis-dev`, then `codex plugin add marvis-dev@marvis-dev`.
+Install:
 
-After you push changes to Git, run `codex plugin marketplace upgrade marvis-dev` to update the plugin. Start a new Codex session to use the updated skills.
+```sh
+codex plugin marketplace add masa-kjm/marvis-dev
+codex plugin add marvis-dev@marvis-dev
+```
+
+Update:
+
+```sh
+codex plugin marketplace upgrade marvis-dev
+```
 
 ### Claude Code
 
-Run `claude plugin marketplace add masa-kjm/marvis-dev`, then `claude plugin install marvis-dev@marvis-dev`.
+Install:
+
+```sh
+claude plugin marketplace add masa-kjm/marvis-dev
+claude plugin install marvis-dev@marvis-dev
+```
 
 ### GitHub Copilot CLI
 
-Run `copilot plugin marketplace add masa-kjm/marvis-dev`, then `copilot plugin install marvis-dev@marvis-dev`.
+Install:
+
+```sh
+copilot plugin marketplace add masa-kjm/marvis-dev
+copilot plugin install marvis-dev@marvis-dev
+```
 
 ### Cursor
 
