@@ -5,7 +5,7 @@ description: Create, validate, and maintain executable work plans for medium-to-
 
 # mvs-manage-work-plan
 
-Create and maintain a work plan that guides execution and verification.
+Create, revise, and verify the consistency of an actionable and verifiable Work Plan based on the provided spec and context.
 
 ## Codebase Map
 
