@@ -36,17 +36,18 @@ These diagrams show how agents can use the skills and their output. Subgraphs ma
 flowchart TD
   subgraph Mapping["Map Codebase Phase"]
     Caller["Caller"]
-    Sources[("Repository sources")]
+    Sources[("Primary sources")]
     MapSkill["mvs-map-codebase"]
-    Map[(".marvis/codebase/")]
+    Map[("Codebase Map<br/>Discovery Index")]
   end
   Consumers(["Other Phases"])
 
   Caller -->|Map request| MapSkill
+  MapSkill -->|Investigates| Sources
   Sources -->|Repository facts| MapSkill
-  Map -->|Existing map| MapSkill
-  MapSkill -->|Create or update| Map
+  MapSkill -->|Build / Update| Map
   Map -->|Navigation pointers| Consumers
+  Consumers -->|Discover| Map
 ```
 
 ### Specification Definition Phase
